@@ -20,10 +20,21 @@ In conclusion, equation $Ax = λx$ is solved by computing a determinant of matri
 
 Multiplication of matrix $A$ is a linear transformation. These are the examples of $2 \times 2$ matrix. 
 
-        [ 3   0  ]             [ -1   0 ]            [  0  1 ]  
-    A = [ 0  0.5 ]        B =  [  0  -2 ]        C = [ -1  0 ]  
+$$A = \begin{bmatrix} 3 & 0 \\
+0 & 0.5 \end{bmatrix}$$
 
-For a case of matrix $A$, base of x-axis is stretched by 3 times and base of y-axis is compressed by half. For other examples, the directions of axes can be flipped (for example matrix $B$) or rotated (for example matrix $C$). Let's think about how eigenvector behave under this linear transformation. The linear transformation of vector $Ax$ is identical with a term of $λx$ which is a scalar multiplication of vector $x$. This represents two things: (1) the direction of eigenvector $x$ is preserved under the linear transformation, and (2) the amount of scalar change due to the linear transformation is represented by $λ$.
+<!--         [ 3   0  ]             [ -1   0 ]            [  0  1 ]  
+    A = [ 0  0.5 ]        B =  [  0  -2 ]        C = [ -1  0 ]   -->
+
+For a case of matrix $A$, base of x-axis is stretched by 3 times and base of y-axis is compressed by half. 
+
+$$B = \begin{bmatrix} -1 & 0 \\
+0 & -2 \end{bmatrix}$$
+
+$$C = \begin{bmatrix} 0 & 1 \\
+-1 & 0 \end{bmatrix}$$
+
+For other examples, the directions of axes can be flipped (for example matrix $B$) or rotated (for example matrix $C$). Let's think about how eigenvector behave under this linear transformation. The linear transformation of vector $Ax$ is identical with a term of $λx$ which is a scalar multiplication of vector $x$. This represents two things: (1) the direction of eigenvector $x$ is preserved under the linear transformation, and (2) the amount of scalar change due to the linear transformation is represented by $λ$.
 
 ## Visualization of eigenvalue problem
 Here, $A$ is defined as $2 \times 2$ matrix and the figure shows the linear transformation.
@@ -41,17 +52,18 @@ Let's find second eigenvector and eigenvalue.
 <img src=2nd_vector.png width="390" height="300"> [2]
 <img src=2nd_vector_after.png width="390" height="300"> [2]
 
-As you can see it on figures, the direction of $x = (-1, 1) $ is unchanged after the linear transformation but only stretched by 2.
+As you can see it on figures, the direction of $x = (-1, 1)$ is unchanged after the linear transformation but only stretched by 2. Any vector which is not on the span of $(-1,1)$ or $(1,0)$ will be changed its own direction due to the linear transformation. Therefore, we consider the eigenvectors of this matrix $A$ as new bases at the transformed coordinate system due to its linear transformation and the eigenvalues are considered as scalaring factors for this transformation.
+
 
 
 ## Practical applications using eigenvalue problem
-1. Apply singular value decomposition for image compression
+### 1. Apply singular value decomposition for image compression
 
 When we apply singular value decomposition, we can compute dominant eigenvalues and corresponding eigenvectors. Based on this result, if we throw away small eigenvalues of $AA^T$, we can easily compress the image without lose the major information. The figure shows the quality of pictures by different singular values "k". By doing so, we can reduce large amount of memory overhead on various fields. 
 
 <img src=svd.png> [3]
 
-3. Dimensionality reduction using principal component analysis
+### 2. Dimensionality reduction using principal component analysis
 
 In modern world, we have planty of information, so the key point is how we can extract the essence from the bulk of information. For the perspective of large dataset, the dimensionality reduction emerges to hot topic. Principal component analysis (PCA) is a technique to reduce a high dimensional data into low dimension while preserving the major information. 
 
@@ -68,6 +80,9 @@ This generalized eigenvalue problem can be altered to ordinary eigenvalue proble
 # Reference
 
 [1] Wilkinson, James Hardy. The algebraic eigenvalue problem, volume 662. Oxford Clarendon, 1965.
+
 [2] 3Blue1Brown. (2016a, September 15). Eigenvectors and eigenvalues | Chapter 14, Essence of linear algebra. YouTube. https://www.youtube.com/watch?v=PFDu9oVAE-g
+
 [3] Aishwarya, K. M., Ramesh, R., Sobarad, P. M., & Singh, V. (2016, March). Lossy image compression using SVD coding algorithm. In 2016 International Conference on Wireless Communications, Signal Processing and Networking (WiSPNET) (pp. 1384-1389). IEEE.
+
 [4] Wikipedia contributors. (2016, February 8). File:GaussianScatterPCA.svg - Wikipedia. https://en.wikipedia.org/wiki/File:GaussianScatterPCA.svg
