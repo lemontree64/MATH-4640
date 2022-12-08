@@ -27,6 +27,7 @@ For a case of matrix $A$, base of x-axis is stretched by 3 times and base of y-a
 
 ## Visualization of eigenvalue problem
 Here, $A$ is defined as $2 \times 2$ matrix and the figure shows the linear transformation.
+
 <img src=figure1.png width="400" height="300"> [2]
 
 Then, how do pair of eigenvector and eigenvalue look like? It will be explained based on two characteristics that we discussed earlier. The direction of first eigenvector is on x-axis. See you can see here, the direction of x-axis is not change after the linear transformation but it is only stretched by 3. 
